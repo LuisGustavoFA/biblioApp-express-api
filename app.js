@@ -21,7 +21,10 @@ import usersRouter from './routes/users.js';
 
 var app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:9000', 'https://biblioapp-quasar-front.onrender.com'],
+  credentials: true
+}));
 
 app.use(logger('dev'));
 app.use(express.json());
